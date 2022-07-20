@@ -508,14 +508,14 @@ header{
 
 .container-form{
     background-color: #E9E9E9;
-    min-height: 256px;
+    padding-bottom: 45px;
     border-radius: 15px;
 }
 
 .form{
     background-color: #fff;
     border-radius: 15px;
-    margin: 0 45px 45px 45px;
+    margin: 0 45px 0 45px;
     
 }
 
