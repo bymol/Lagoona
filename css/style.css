@@ -69,15 +69,10 @@ header{
     align-items: center;
     justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
     Первый элемент вначале, последний в конце */
-    width: 100%; 
+    min-width: 575px; 
 }
 
 .header-left{
-    display: flex;
-    align-items: center;
-}
-
-.header-right{
     display: flex;
     align-items: center;
 }
@@ -101,22 +96,19 @@ header{
 }
 
 .nav{
+    min-width: 573px;
     margin-top: 30px;
     display: flex;
-    flex-direction: row; /* Направление, в котором блоки будут располагаться в строку */
     justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
     Первый элемент вначале, последний в конце */
     align-items: center;
     background: #FFFFFF;
-    height: 100%;
-    width: 100%;
     border-radius: 15px;
 }
 
 .nav-list{
     display: flex;
     flex-wrap: wrap; /*Блоки выстраиваются в несколько строк, если не помещаются в одну.*/
-    margin: auto; 
 }
 
 .nav-item{
@@ -136,10 +128,14 @@ header{
 
 .btn-list{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .btn-head{
+    display: inline-block;
     padding: 13px 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     border: 1px solid #CC9933;
     border-radius: 10px;
     font-weight: 400;
@@ -169,23 +165,14 @@ header{
 .spec-cards{
     display: flex;
     flex-wrap: wrap; /*Блоки выстраиваются в несколько строк, если не помещаются в одну.*/
-    flex-direction: row; /* Направление, в котором блоки будут располагаться в строку */
     justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
     Первый элемент вначале, последний в конце */
-}
-
-.section-spec-left{
-    flex-direction: column;
 }
 
 .spec-left{
     min-width: 573px;
     min-height: 258px;
-    margin-right: 24px;
     border-radius: 15px;
-}
-
-.spec-left:not(:last-child){
     margin-bottom: 24px;
 }
 
@@ -202,8 +189,10 @@ header{
 .spec-right {
     min-height: 540px;
     min-width: 573px;
+    margin-bottom: 24px;
+    background-image: url('../img/spec-3.png');
+    background-repeat: no-repeat;
     border-radius: 15px;
-    background-image: url('../img/spec-3.jpg');
 }
 
 .spec-title{
@@ -260,7 +249,7 @@ header{
 
 /*о нас*/
 .section-onas{
-    margin-top: 70px;
+    margin-top: 46px;
 }
 
 .section-onas h2{
@@ -501,4 +490,273 @@ header{
     min-width: 14px;
     min-height: 14px;
     background: url('/img/star-2.svg') no-repeat;
+}
+
+/*Form*/
+.section-form{
+    margin-top: 46px;
+}
+
+.section-form h2{
+    margin: 0 0 20px 40px;
+    padding-top: 45px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    color: #000;
+}
+
+.container-form{
+    background-color: #E9E9E9;
+    min-height: 256px;
+    border-radius: 15px;
+}
+
+.form{
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 0 45px 45px 45px;
+    
+}
+
+.form-spisok{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 28px;
+    margin-right: 28px;
+}
+
+.form-label{
+    margin-top: 31px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #000;
+}
+
+.form-input{
+    margin-bottom: 32px;
+    border: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #000;
+}
+
+.section-form select{
+    width: 169px;
+    margin-left: -4px;
+}
+
+.section-form input{
+    width: 121px;
+    margin-left: -2px;
+}
+
+.form-btn{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #CC9933;
+    background-color: #fff;
+    padding: 13px 30px;
+    border: 1px solid #CC9933;
+    border-radius: 10px;
+}
+
+/*Contacts*/
+.section-contacts h2{
+    margin: 0 0 20px 40px;
+    padding-top: 70px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    color: #000;
+}
+
+.contacts-block{
+    display: flex;
+    min-height: 610px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.contacts-block-right{
+    margin: 45px 45px 45px 52px;
+}
+
+.contacts-img{
+    width: 100%;
+    height: 100%;
+}
+
+.contacts-block-left{
+    margin: 20px 0 0 45px;
+    width: 375px;
+}
+
+.contacts-spisok-punkt{
+    padding: 25px 0 23px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.contacts-spisok-punkt p{
+    margin: 0;
+}
+
+.contacts-spisok-title{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.contacts-spisok-right{
+    min-width: 225px;
+}
+
+.contacts-spisok-link{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #CC9933;
+}
+
+.contacts-spisok-mail-des{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #999999;
+}
+
+.contacts-spisok-description{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+}
+
+.contacts-btn{
+    margin-top: 72px;
+}
+
+.contacts-btn-link{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #CC9933;
+    background-color: #fff;
+    padding: 27px 30px;
+    border: 1px solid #CC9933;
+    border-radius: 10px;
+}
+
+/*footer*/
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0 30px 0;
+    background-color: #333;
+    border-radius: 15px;
+    min-height: 341px;
+}
+
+.footer-left{
+    margin-right: 80px;
+}
+
+.footer-left-copy{
+    padding: 45px 0 0 45px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 190%;
+    color: #FFFFFF;
+}
+
+.footer-left-des{
+    margin: 37px 0 0 45px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 190%;
+    color: #FFFFFF;
+}
+
+.footer-link{
+    margin: 40px 0 0 45px;
+    
+}
+
+.footer-link-a{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #CC9933;
+}
+
+.footer-right{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-image: url(../img/footer.svg);
+    background-repeat: no-repeat;
+    background-position: 65% 100%; 
+}
+
+.footer-right-left{
+    margin-right: 225px;
+}
+
+.footer-adres{
+    margin-top: 45px;
+    margin-left: 45px;
+    
+}
+
+.footer-adres address{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.footer-tel{
+    margin-top: 15px;
+    margin-left: 45px;
+}
+
+.footer-tel-link{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #CC9933;
+}
+
+.footer-mail{
+    margin-top: 15px;
+    margin-left: 45px;
+}
+
+.footer-mail-link{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #CC9933;
+}
+
+.footer-right-right{
+    margin-top: 45px;
+    margin-left: 45px;
+}
+
+.footer-right-icon{
+    margin-bottom: 20px;
 }
