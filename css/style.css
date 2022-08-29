@@ -108,7 +108,7 @@ header{
     color: var(--color-grey);
 }
 
-.phone-nomer:hover{
+.header-phone-nomer:hover{
     color: var(--color-grey);
     text-decoration: underline;
     text-underline-offset: 3px; /* Смещаем подчёркивание вниз */
