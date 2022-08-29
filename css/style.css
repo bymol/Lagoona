@@ -347,6 +347,7 @@ header{
 .uslugi-item{
     flex: 0 0 47.99%;
     margin: 12px;
+    min-width: 300px;
     min-height: 330px;
     border-radius: 15px;
     background-color: var(--color-white);
@@ -359,6 +360,12 @@ header{
 .uslugi-item-img{
     border-radius: 15px 15px 0 0;
     margin-bottom: 26px;
+    width: 100%;
+    min-height: 100px;
+}
+
+.usligu-link-block{
+    margin-left: 45px;
 }
 
 .uslugi-link{
@@ -368,7 +375,7 @@ header{
     font-size: 20px;
     line-height: 200%; 
     color: var(--color-orange);
-    margin-left: 45px;
+    
     transition-property: padding-right;
     transition-duration: 300ms;
     transition-timing-function: linear;
