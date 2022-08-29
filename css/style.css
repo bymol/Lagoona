@@ -1,33 +1,17 @@
 @font-face { 
     font-family: "Muller";
-    src: url('../fonts/MullerBold.woff2') format('woff2'),
-    url('../fonts/MullerBold.woff') format('woff');
-    font-style: normal;
-    font-weight: 700;
-}
-
-@font-face { 
-    font-family: "Muller";
-    src: url('../fonts/MullerLight.woff2') format('woff2'),
-    url('../fonts/MullerLight.woff') format('woff');
-    font-style: normal;
-    font-weight: 300;
-}
-
-@font-face { 
-    font-family: "Muller";
-    src: url('../fonts/MullerMedium.woff2') format('woff2'),
-    url('../fonts/MullerMedium.woff') format('woff');
-    font-style: normal;
-    font-weight: 500;
-}
-
-@font-face { 
-    font-family: "Muller";
     src: url('../fonts/MullerRegular.woff2') format('woff2'),
     url('../fonts/MullerRegular.woff') format('woff');
     font-style: normal;
     font-weight: 400;
+}
+
+:root{
+    --color-black: #000;
+    --color-white:#fff;
+    --color-grey: #666666;
+    --color-orange: #CC9933;
+    --color-h-footer: #333333;
 }
 
 *{
@@ -53,6 +37,18 @@ ul {
     list-style: none;
 }
 
+.btn{
+    transition-property: background-color, color;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+    
+}
+
+.btn:hover{
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
 /*header*/
 header{
     margin-top: 30px;
@@ -67,42 +63,82 @@ header{
 .header-container{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
     Первый элемент вначале, последний в конце */
-    min-width: 575px; 
 }
 
 .header-left{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
-.phone-nomer{
+.header-right{
+    margin-left: 15px;
+}
+
+@media (max-width: 633px){
+    .header-right{
+        margin-top: 15px;
+    }
+}
+
+.header-phone{
+    margin-left: 34px;
+}
+
+@media (max-width: 466px){
+    .header-phone{
+        margin-left: 15px;
+    }  
+}
+
+@media (max-width: 447px){
+    .header-phone{
+        margin-top: 15px;
+        margin-left: 15px;
+    }  
+}
+
+.header-phone-nomer{
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
-    color: #666666;
-    padding-left: 34px;
+    color: var(--color-grey);
+}
+
+.phone-nomer:hover{
+    color: var(--color-grey);
+    text-decoration: underline;
+    text-underline-offset: 3px; /* Смещаем подчёркивание вниз */
+    text-decoration-thickness: 3px; /* Толщина подчёркивания */
 }
 
 .kabinet-link{
     background: url('../img/keyboard_tab.svg') no-repeat 0;
     background-position: bottom -2px left 0px;
     padding-left: 27px;
-    color: #CC9933;
+    color: var(--color-orange);
     font-size: 16px;
     line-height: 16px;
     font-weight: 400;
 }
 
+.kabinet-link:hover{
+    color: var(--color-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px; /* Смещаем подчёркивание вниз */
+    text-decoration-thickness: 3px; /* Толщина подчёркивания */
+}
+
 .nav{
-    min-width: 573px;
     margin-top: 30px;
     display: flex;
-    justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
-    Первый элемент вначале, последний в конце */
+    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    background: #FFFFFF;
+    background: var(--color-white);
     border-radius: 15px;
 }
 
@@ -115,15 +151,18 @@ header{
     margin: 27px 0 27px 45px;
 }
 
-.nav-item:last-of-type{
-    margin-right: 114px; 
-}
-
 .nav-link{
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
-    color: #666666;
+    color: var(--color-grey);;
+    transition-property: color;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+
+.nav-link:hover{
+    color:#F0BF5F;
 }
 
 .btn-list{
@@ -131,23 +170,29 @@ header{
     flex-wrap: wrap;
 }
 
+@media (max-width: 1091px){
+    .btn-list{
+       margin-left: 40px;
+    }  
+}
+
 .btn-head{
     display: inline-block;
     padding: 13px 20px;
     margin-bottom: 5px;
     margin-top: 5px;
-    border: 1px solid #CC9933;
+    border: 1px solid var(--color-orange);
     border-radius: 10px;
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
-    color: #CC9933;
-    
+    color: var(--color-orange);   
 }
 
-.btn-head {
+.btn-head:first-child{ /*только первый элемент*/
     margin-right: 40px;
 }
+
 
 /*spec*/
 .section-spec{
@@ -159,37 +204,41 @@ header{
     font-weight: 400;
     font-size: 40px;
     line-height: 40px;
-    color: #333333;
+    color: var(--color-h-footer);
 }
 
 .spec-cards{
     display: flex;
     flex-wrap: wrap; /*Блоки выстраиваются в несколько строк, если не помещаются в одну.*/
-    justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
-    Первый элемент вначале, последний в конце */
+    margin: 0 -12px;
+}
+
+.spec-card-block{
+    flex: 0 0 47.99%;
+    margin: 0 12px;
 }
 
 .spec-left{
-    min-width: 573px;
+    min-width: 337px;
     min-height: 258px;
     border-radius: 15px;
-    margin-bottom: 24px;
 }
 
 .spec-left-1{
+    min-height: 258px;
     background-image: url('../img/spec-1.jpg');
     background-repeat: no-repeat;
 }
 
 .spec-left-2{
+    min-height: 258px;
+    margin: 24px 0 24px 0;
     background-image: url('../img/spec-2.jpg');
     background-repeat: no-repeat;
 }
 
 .spec-right {
-    min-height: 540px;
-    min-width: 573px;
-    margin-bottom: 24px;
+    min-height: 564px;
     background-image: url('../img/spec-3.png');
     background-repeat: no-repeat;
     border-radius: 15px;
@@ -201,7 +250,7 @@ header{
     font-weight: 700;
     font-size: 40px;
     line-height: 40px;
-    color: #FFFFFF;
+    color: var(--color-white);;
 }
 
 .spec-title-2{
@@ -210,7 +259,7 @@ header{
     font-weight: 700;
     font-size: 60px;
     line-height: 60px;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .spec-price{
@@ -219,7 +268,7 @@ header{
     font-weight: 400;
     font-size: 20px;
     line-height: 20px;
-    color: #FFFFFF;
+    color: var(--color-white);
     opacity: 0.8;
 }
 
@@ -229,12 +278,12 @@ header{
     font-weight: 400;
     font-size: 30px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: var(--color-white);
     opacity: 0.8;
 }
 
 .spec-link-block{
-    margin-top: 47px;
+    margin-top: 8%;
     margin-left: 45px;
 }
 
@@ -245,11 +294,18 @@ header{
     font-size: 16px;
     line-height: 16px;
     color: #F0BF5F;
+    transition-property: padding-right;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+
+.spec-link:hover{
+    padding-right: 17px;
 }
 
 /*о нас*/
 .section-onas{
-    margin-top: 46px;
+    margin-top: 48px;
 }
 
 .section-onas h2{
@@ -257,7 +313,7 @@ header{
     font-weight: 400;
     font-size: 40px;
     line-height: 40px;
-    color: #333333;
+    color: var(--color-h-footer);
 }
 
 .section-onas p{
@@ -266,7 +322,7 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 200%;
-    color: #000;
+    color: var(--color-black);
 }
 
 /*услуги*/
@@ -279,26 +335,21 @@ header{
     font-weight: 400;
     font-size: 40px;
     line-height: 40px;
-    color: #333333;
+    color: var(--color-h-footer);
 }
 
 .uslugi-list{
     display: flex;
     flex-wrap: wrap; /*Блоки выстраиваются в несколько строк, если не помещаются в одну.*/
-    flex-direction: row; /* Направление, в котором блоки будут располагаться в строку */
-    justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
-    Первый элемент вначале, последний в конце */
-    height: 100%;
-    width: 100%;
-    margin: auto;
+    margin: -12px;
 }
 
 .uslugi-item{
-    margin-bottom: 24px;
-    width: 573px;
-    height: 330px;
+    flex: 0 0 47.99%;
+    margin: 12px;
+    min-height: 330px;
     border-radius: 15px;
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 
 /*.uslugi-item:not(:nth-last-child(-n+2)){
@@ -316,8 +367,15 @@ header{
     font-weight: 500;
     font-size: 20px;
     line-height: 200%; 
-    color: #CC9933;
+    color: var(--color-orange);
     margin-left: 45px;
+    transition-property: padding-right;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+
+.uslugi-link:hover{
+    padding-right: 17px;
 }
 
 .section-uslugi p{
@@ -325,12 +383,12 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 200%;
-    color:#000
+    color: var(--color-black);
 }
 
 /*Преимущества*/
 .section-plusi{
-    margin-top: 46px;
+    margin-top: 70px;
 }
 
 .section-plusi h2{
@@ -338,35 +396,23 @@ header{
     font-weight: 400;
     font-size: 40px;
     line-height: 40px;
-    color: #333333;
-}
-
-.plus-list{
-    display: inline-block;
+    color: var(--color-h-footer);
 }
 
 .plus-list{
     display: flex;
 	flex-wrap: wrap; /*Блоки выстраиваются в несколько строк, если не помещаются в одну.*/
-	flex-direction: row; /* Направление, в котором блоки будут располагаться в строку */
-	justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
-    Первый элемент вначале, последний в конце */
-	height: 100%;
-	width: 100%;
-	margin: auto;
+    margin: -11px;
 }
 
-.plus-block{
-    margin-bottom: 22px;
-    width: 276px;
-	height: 276px;
-    background-color: #fff;
+.plus-block{ 
+    flex: 0 0 23.15%;
+    min-width: 276px;
+	min-height: 276px;
+    background-color: var(--color-white);
     border-radius: 15px;
+    margin: 11px
 }
-
-/*.plus-block:not(:nth-last-child(-n+4)){
-    margin-bottom: 22px;
-}*/
 
 .plus-icon{
     margin: 40px 0 0 45px;
@@ -377,12 +423,12 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 200%;
-    color: #000000;
+    color: var(--color-black);
 }
 
 /*Размещение*/
 .section-razme{
-    margin-top: 46px;
+    margin-top: 48px;
 }
 
 .section-razme h2{
@@ -390,24 +436,20 @@ header{
     font-weight: 400;
     font-size: 40px;
     line-height: 40px;
-    color: #333333;
+    color: var(--color-h-footer);
 }
 
 .razme-list{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    margin: auto;
+    margin: -12px;
 }
 
 .razme-block{
-    margin-bottom: 24px;
-    width: 374px;
-    height: 440px;
-    background-color: #fff;
+    flex: 0 0 31.32%;
+    margin: 12px;
+    min-height: 440px;
+    background-color: var(--color-white);
     border-radius: 15px;
 }
 
@@ -417,10 +459,13 @@ header{
 }
 
 .razme-block-end{
+    min-width: 374px;
+    position: relative; /*для before*/
     background-image: url(../img/razme-9.jpg);
 }
 
 .razme-block-link-end{
+    
     padding-top: 373px;
     padding-left: 54px;
     
@@ -432,7 +477,27 @@ header{
     font-weight: 500;
     font-size: 20px;
     line-height: 200%;
-    color: #FFFFFF;
+    color: var(--color-white);
+    transition-property: padding-right;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+
+.razme-link-end:before { /*чтобы ссылка растянулась на весть блок*/
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+.razme-link-end:hover{
+    padding-right: 18px;
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 3px; /* Смещаем подчёркивание вниз */
+    text-decoration-thickness: 2px; /* Толщина подчёркивания */
 }
 
 .razme-text{
@@ -448,17 +513,17 @@ header{
     font-weight: 700;
     font-size: 20px;
     line-height: 20px;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .razme-text-time{
     margin-right: 52px;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .razme-text-2{
     margin-left: 45px;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .razme-btn{
@@ -470,9 +535,9 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
-    color: #CC9933;
+    color: var(--color-orange);
     padding: 13px 20px;
-    border: 1px solid #CC9933;
+    border: 1px solid var(--color-orange);
     border-radius: 10px;
 }
 
@@ -494,7 +559,7 @@ header{
 
 /*Form*/
 .section-form{
-    margin-top: 46px;
+    margin-top: 70px;
 }
 
 .section-form h2{
@@ -503,7 +568,7 @@ header{
     font-weight: 400;
     font-size: 40px;
     line-height: 40px;
-    color: #000;
+    color: var(--color-black);
 }
 
 .container-form{
@@ -513,7 +578,7 @@ header{
 }
 
 .form{
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 15px;
     margin: 0 45px 0 45px;
     
@@ -534,7 +599,7 @@ header{
     font-weight: 400;
     font-size: 12px;
     line-height: 12px;
-    color: #000;
+    color: var(--color-black);
 }
 
 .form-input{
@@ -543,7 +608,7 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
-    color: #000;
+    color: var(--color-black);
 }
 
 .section-form select{
@@ -560,11 +625,12 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
-    color: #CC9933;
-    background-color: #fff;
+    color: var(--color-orange);
+    background-color: var(--color-white);
     padding: 13px 30px;
-    border: 1px solid #CC9933;
+    border: 1px solid var(--color-orange);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /*Contacts*/
@@ -574,7 +640,7 @@ header{
     font-weight: 400;
     font-size: 40px;
     line-height: 40px;
-    color: #000;
+    color: var(--color-black);
 }
 
 .contacts-block{
@@ -582,7 +648,7 @@ header{
     min-height: 610px;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 15px;
 }
 
@@ -616,7 +682,7 @@ header{
     font-weight: 700;
     font-size: 20px;
     line-height: 20px;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .contacts-spisok-right{
@@ -627,7 +693,14 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #CC9933;
+    color: var(--color-orange);
+}
+
+.contacts-spisok-link:hover{
+    color: var(--color-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px; /* Смещаем подчёркивание вниз */
+    text-decoration-thickness: 2px; /* Толщина подчёркивания */
 }
 
 .contacts-spisok-mail-des{
@@ -641,7 +714,7 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .contacts-btn{
@@ -652,10 +725,10 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
-    color: #CC9933;
-    background-color: #fff;
+    color: var(--color-orange);
+    background-color: var(--color-white);
     padding: 27px 30px;
-    border: 1px solid #CC9933;
+    border: 1px solid var(--color-orange);
     border-radius: 10px;
 }
 
@@ -664,7 +737,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     margin: 40px 0 30px 0;
-    background-color: #333;
+    background-color: var(--color-h-footer);
     border-radius: 15px;
     min-height: 341px;
 }
@@ -678,7 +751,7 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 190%;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .footer-left-des{
@@ -686,7 +759,7 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 190%;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .footer-link{
@@ -698,7 +771,14 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #CC9933;
+    color: var(--color-orange);
+}
+
+.footer-link-a:hover{
+    color: var(--color-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px; /* Смещаем подчёркивание вниз */
+    text-decoration-thickness: 2px; /* Толщина подчёркивания */
 }
 
 .footer-right{
@@ -725,7 +805,7 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .footer-tel{
@@ -737,7 +817,14 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #CC9933;
+    color: var(--color-orange);
+}
+
+.footer-tel-link:hover{
+    color: var(--color-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px; /* Смещаем подчёркивание вниз */
+    text-decoration-thickness: 2px; /* Толщина подчёркивания */
 }
 
 .footer-mail{
@@ -749,7 +836,14 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #CC9933;
+    color: var(--color-orange);
+}
+
+.footer-mail-link:hover{
+    color: var(--color-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px; /* Смещаем подчёркивание вниз */
+    text-decoration-thickness: 2px; /* Толщина подчёркивания */
 }
 
 .footer-right-right{
